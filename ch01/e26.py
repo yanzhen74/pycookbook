@@ -6,7 +6,8 @@ def get_record_pos(n, c, x):
     _n = int((x - (p - 1) * npp) / c) + 1
     _n = _n - 1 if _c == 0 else _n
     _c = c if _c == 0 else _c
-    print(p, _n, _c, sep='-')
+    #print(p, _n, _c, sep='-')
+    return p, _n, _c
 
 
 get_record_pos(5, 3, 16)
