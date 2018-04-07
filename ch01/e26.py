@@ -1,12 +1,10 @@
-def get_record_pos(nLine, nColum, _nItem):
+def get_record_pos(n_line, n_column, _n_item):
+    _n_item_base0 = _n_item - 1
+    n_items_per_page = n_line * n_column
+    _n_page = _n_item_base0 // n_items_per_page + 1
 
-	_nItemBase0 = _nItem - 1
-	nItemsPerPage = nLine * nColum
-	_nPage = _nItemBase0 // nItemsPerPage + 1
+    _n_line = (_n_item_base0 % n_items_per_page) // n_column + 1
 
-	_nLine = (_nItemBase0 % nItemsPerPage) // nColum + 1
+    _n_column = _n_item_base0 % n_column + 1
 
-	_nColum = _nItemBase0 % nColum + 1
-
-	return _nPage, _nLine, _nColum
-
+    return _n_page, _n_line, _n_column
