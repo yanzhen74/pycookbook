@@ -1,5 +1,6 @@
 import unittest
 from e26 import get_record_pos
+from collatz_puzzle import get_collatz_list
 
 
 class TestE26(unittest.TestCase):
@@ -14,3 +15,8 @@ class TestE26(unittest.TestCase):
         self.assertEqual(get_record_pos(5, 3, 31), (3, 1, 1))
         self.assertEqual(get_record_pos(5, 3, 15), (1, 5, 3))
         self.assertEqual(get_record_pos(5, 3, 1), (1, 1, 1))
+
+    def test_collatz(self):
+        r = [3]
+        get_collatz_list(3, r)
+        self.assertEqual(len(r), 8)
